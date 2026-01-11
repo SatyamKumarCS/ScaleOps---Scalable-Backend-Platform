@@ -1,0 +1,9 @@
+import express, {Request,Response} from 'express';
+
+const app = express();
+
+app.get('/health', (_req:Request, res:Response) => {
+    return res.status(200).json({ message: 'Hello, ScaleOps API!' });
+});
+
+export default app;
