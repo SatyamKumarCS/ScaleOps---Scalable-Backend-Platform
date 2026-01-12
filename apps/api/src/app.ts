@@ -1,9 +1,8 @@
 import express, {Request,Response} from 'express';
-
+import routes from './routes/index.js';
 const app = express();
 
-app.get('/health', (_req:Request, res:Response) => {
-    return res.status(200).json({ message: 'Hello, ScaleOps API!' });
-});
+app.use(express.json());
+app.use(routes)
 
 export default app;
